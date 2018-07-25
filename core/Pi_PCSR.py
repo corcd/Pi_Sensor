@@ -22,8 +22,8 @@ def checkdist():
     while GPIO.input(Echo_Pin):
         pass
     t2 = time.time()
-    return (t2 - t1) * 340 * 100 / 2
+    return int((t2 - t1) * 340 * 100 / 2)
 
 
-print(int(checkdist()))
+print(checkdist())
 GPIO.cleanup()

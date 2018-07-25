@@ -8,6 +8,8 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Pin, GPIO.IN)
 
+time.sleep(1)
+
 # try:
 #     while True:
 if GPIO.input(Pin) == 1:

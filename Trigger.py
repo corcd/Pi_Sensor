@@ -2,19 +2,23 @@ from selenium import webdriver
 import os
 import time
 
-trigger = 1  #触发器是否有效，默认有效
-
 # def screen_trigger():
 #     return []
 
 #def face_trigger(trigger):
 try:
+    trigger = 1  #触发器是否有效，默认有效
+
     print('开始后台检测')
     while True:
         someone = os.popen('python3 core/Pi_PES.py').read()
         distance = os.popen('python3 core/Pi_PCSR.py').read()
 
-        print(someone, distance)
+        print(someone)
+        print(distance)
+
+        someone = str(someone, encoding='utf-8')
+        distance = str(distance, encoding='utf-8')
         # if isinstance(someone, bytes):
         #     s = str(someone, encoding='utf-8')
         # if isinstance(distance1, bytes):
@@ -22,7 +26,7 @@ try:
         # if isinstance(distance2, bytes):
         #     d2 = str(distance2, encoding='utf-8')
 
-        if someone == "true" and distance == 'true' and trigger == 1:
+        if someone == 'true' and distance == 'true' and trigger == 1:
             print('检测到人体')
             # chromedriver = '/home/pi/Downloads/chromedriver'
             # os.environ['webdriver.chrome.driver'] = chromedriver

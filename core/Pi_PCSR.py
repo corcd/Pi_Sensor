@@ -25,9 +25,5 @@ def checkdist():
     return (t2 - t1) * 340 * 100 / 2
 
 
-try:
-    while True:
-        print('Distance:', checkdist(), 'cm')
-        time.sleep(1)
-except KeyboardInterrupt:
-    GPIO.cleanup()
+print(int(checkdist()))
+GPIO.cleanup()

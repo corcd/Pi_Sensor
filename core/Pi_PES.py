@@ -10,9 +10,9 @@ GPIO.setup(Pin, GPIO.IN)
 try:
     while True:
         if GPIO.input(Pin) == 1:
-            print("Some people here!")
+            print("true")
         else:
-            print("Nobody!")
+            print("false")
         time.sleep(1)
 except KeyboardInterrupt:
     GPIO.cleanup()

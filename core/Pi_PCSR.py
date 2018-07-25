@@ -1,6 +1,7 @@
 #超声波测距传感器
 import RPi.GPIO as GPIO
 import time
+import math
 
 Trig_Pin = 20  #超声波发送脚
 Echo_Pin = 21  #超声波接收检测脚
@@ -23,9 +24,9 @@ def checkdist():
     while GPIO.input(Echo_Pin):
         pass
     t2 = time.time()
-    return int((t2 - t1) * 340 * 100 / 2)
+    return (t2 - t1) * 340 * 100 // 2
 
 
 temp = checkdist()
-print(temp)
+print(round(temp))
 GPIO.cleanup()

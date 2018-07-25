@@ -26,7 +26,7 @@ try:
             chromedriver = '/home/pi/Downloads/chromedriver'
             os.environ['webdriver.chrome.driver'] = chromedriver
             driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
-            driver.get('http://www.baidu.com/')  #打开网址
+            driver.get('localhost:5000/login')  #打开网址
             driver.maximize_window()  #窗口最大化
             trigger = 0
         else:

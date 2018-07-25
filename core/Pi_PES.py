@@ -4,6 +4,7 @@ import time
 
 Pin = 5
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Pin, GPIO.IN)
 

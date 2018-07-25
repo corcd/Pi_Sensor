@@ -23,11 +23,11 @@ try:
 
         if someone == 1 & distance < 100 & distance > 30 & trigger == 1:
             print('检测到人体')
-            chromedriver = '/home/pi/Downloads/chromedriver'
-            os.environ['webdriver.chrome.driver'] = chromedriver
-            driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
-            driver.get('localhost:5000/login')  #打开网址
-            driver.maximize_window()  #窗口最大化
+            # chromedriver = '/home/pi/Downloads/chromedriver'
+            # os.environ['webdriver.chrome.driver'] = chromedriver
+            # driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
+            # driver.get('localhost:5000/login')  #打开网址
+            # driver.maximize_window()  #窗口最大化
             trigger = 0
         else:
             trigger = 1

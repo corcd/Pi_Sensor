@@ -5,6 +5,7 @@ import time
 Trig_Pin = 20  #超声波发送脚
 Echo_Pin = 21  #超声波接收检测脚
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Trig_Pin, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(Echo_Pin, GPIO.IN)

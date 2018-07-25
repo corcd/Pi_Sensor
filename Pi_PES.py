@@ -2,15 +2,17 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(5, GPIO.IN)
+Pin = 5
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(Pin, GPIO.IN)
 
 try:
-  while True:
-    if GPIO.input(5) == 1:
-      print ("Some people here!")
-    else:
-      print ("Nobody!")
-    time.sleep(.1)
+    while True:
+        if GPIO.input(Pin) == 1:
+            print("Some people here!")
+        else:
+            print("Nobody!")
+        time.sleep(1)
 except KeyboardInterrupt:
-  GPIO.cleanup()
+    GPIO.cleanup()

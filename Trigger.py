@@ -17,6 +17,7 @@ def face_trigger(trigger):
             time.sleep(1)
             distance2 = os.popen('python3 core/Pi_PCSR.py').read()
 
+            print(someone,distance1,distance2)
             # if isinstance(someone, bytes):
             #     s = str(someone, encoding='utf-8')
             # if isinstance(distance1, bytes):
@@ -33,7 +34,8 @@ def face_trigger(trigger):
                 trigger = 0
             else:
                 trigger = 1
-        time.sleep(2)
+            print(trigger)
+            time.sleep(2)
     except KeyboardInterrupt:
         return []
 

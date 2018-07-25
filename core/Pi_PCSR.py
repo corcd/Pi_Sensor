@@ -26,5 +26,6 @@ def checkdist():
     return int((t2 - t1) * 340 * 100 / 2)
 
 
-print(checkdist())
+temp = checkdist()
+print(temp)
 GPIO.cleanup()

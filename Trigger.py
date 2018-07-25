@@ -22,7 +22,7 @@ try:
         # if isinstance(distance2, bytes):
         #     d2 = str(distance2, encoding='utf-8')
 
-        if someone == "true" & distance == 'true' & trigger == 1:
+        if someone == "true" and distance == 'true' and trigger == 1:
             print('检测到人体')
             # chromedriver = '/home/pi/Downloads/chromedriver'
             # os.environ['webdriver.chrome.driver'] = chromedriver

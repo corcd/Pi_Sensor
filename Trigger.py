@@ -20,9 +20,7 @@ try:
 
         if (someone == condition and distance == condition and trigger == 1):
             print('Ready to Login')
-            chromedriver = 'driver/chromedriver'
-            os.environ['webdriver.chrome.driver'] = chromedriver
-            driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
+            driver = webdriver.Chrome()
             driver.get('localhost:5000/login')  #打开网址
             driver.maximize_window()  #窗口最大化
             trigger = 0

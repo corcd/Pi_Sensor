@@ -27,5 +27,9 @@ def checkdist():
     return (t2 - t1) * 340 * 100 // 2
 
 
-print(checkdist())
+temp = round(checkdist())
+if temp > 30 & temp < 100:
+    print('true')
+else:
+    print('false')
 GPIO.cleanup()

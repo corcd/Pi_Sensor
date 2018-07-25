@@ -11,11 +11,9 @@ GPIO.setup(Pin, GPIO.IN)
 # try:
 #     while True:
 if GPIO.input(Pin) == 1:
-    temp = 1
-    print(temp)
+    print('true')
 else:
-    temp = 0
-    print(temp)
+    print('false')
 #         time.sleep(1)
 # except KeyboardInterrupt:
 GPIO.cleanup()

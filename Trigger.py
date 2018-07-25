@@ -11,11 +11,9 @@ trigger = 1  #触发器是否有效，默认有效
 try:
     while True:
         someone = os.popen('python3 core/Pi_PES.py').read()
-        distance1 = os.popen('python3 core/Pi_PCSR.py').read()
-        time.sleep(1)
-        distance2 = os.popen('python3 core/Pi_PCSR.py').read()
+        distance = os.popen('python3 core/Pi_PCSR.py').read()
 
-        print(someone, distance1, distance2)
+        print(someone, distance)
         # if isinstance(someone, bytes):
         #     s = str(someone, encoding='utf-8')
         # if isinstance(distance1, bytes):
@@ -23,7 +21,8 @@ try:
         # if isinstance(distance2, bytes):
         #     d2 = str(distance2, encoding='utf-8')
 
-        if someone == 'true' & distance1 < 100 & distance1 > 30 & distance2 < 100 & distance2 > 30 & trigger == 1:
+        if someone == 1 & distance < 100 & distance > 30 & trigger == 1:
+            print('检测到人体')
             chromedriver = '/home/pi/Downloads/chromedriver'
             os.environ['webdriver.chrome.driver'] = chromedriver
             driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器

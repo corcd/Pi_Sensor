@@ -7,12 +7,14 @@ Pin = 5
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(Pin, GPIO.IN)
 
-try:
-    while True:
-        if GPIO.input(Pin) == 1:
-            print("true")
-        else:
-            print("false")
-        time.sleep(1)
-except KeyboardInterrupt:
-    GPIO.cleanup()
+# try:
+#     while True:
+if GPIO.input(Pin) == 1:
+    temp = 1
+    print(temp)
+else:
+    temp = 0
+    print(temp)
+#         time.sleep(1)
+# except KeyboardInterrupt:
+GPIO.cleanup()

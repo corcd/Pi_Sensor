@@ -8,8 +8,9 @@ import time
 #def face_trigger(trigger):
 try:
     trigger = 1  #触发器是否有效，默认有效
+    condition = 'true\n'
 
-    print('开始后台检测')
+    print('Service Start')
     while True:
         someone = os.popen('python3 core/Pi_PES.py').read()
         distance = os.popen('python3 core/Pi_PCSR.py').read()
@@ -17,29 +18,26 @@ try:
         print(someone)
         print(distance)
 
-        someone = str(someone, encoding='utf-8')
-        distance = str(distance, encoding='utf-8')
-        # if isinstance(someone, bytes):
-        #     s = str(someone, encoding='utf-8')
-        # if isinstance(distance1, bytes):
-        #     d1 = str(distance1, encoding='utf-8')
-        # if isinstance(distance2, bytes):
-        #     d2 = str(distance2, encoding='utf-8')
-
-        if someone == 'true' and distance == 'true' and trigger == 1:
-            print('检测到人体')
-            # chromedriver = '/home/pi/Downloads/chromedriver'
-            # os.environ['webdriver.chrome.driver'] = chromedriver
-            # driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
-            # driver.get('localhost:5000/login')  #打开网址
-            # driver.maximize_window()  #窗口最大化
+        if (someone == condition and distance == condition and trigger == 1):
+            print('Ready to Login')
+            chromedriver = 'driver/chromedriver'
+            os.environ['webdriver.chrome.driver'] = chromedriver
+            driver = webdriver.Chrome(chromedriver)  #模拟打开浏览器
+            driver.get('localhost:5000/login')  #打开网址
+            driver.maximize_window()  #窗口最大化
             trigger = 0
+        elif (someone == condition and distance == condition and trigger == 0):
+            print('Logining...')
+            pass
         else:
+            print('Nobody Here')
             trigger = 1
-        print(trigger)
-        time.sleep(2)
+        print('T=', trigger)
+        print('\n')
+        print('****************************\n')
+        time.sleep(1)
 except KeyboardInterrupt:
-    print('终止后台检测')
+    print('Service End')
     pass
 
 #face_trigger(trigger)

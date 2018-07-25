@@ -20,7 +20,7 @@ try:
 
         if (someone == condition and distance == condition and trigger == 1):
             print('Ready to Login')
-            driver = webdriver.Chrome()
+            driver = webdriver.Firefox()
             driver.get('localhost:5000/login')  #打开网址
             driver.maximize_window()  #窗口最大化
             trigger = 0

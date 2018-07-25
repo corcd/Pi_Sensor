@@ -16,7 +16,7 @@ time.sleep(1)
 
 def checkdist():
     GPIO.output(Trig_Pin, GPIO.HIGH)
-    time.sleep(0.00015)
+    time.sleep(0.1)
     GPIO.output(Trig_Pin, GPIO.LOW)
     while not GPIO.input(Echo_Pin):
         pass
@@ -28,7 +28,7 @@ def checkdist():
 
 
 temp = round(checkdist())
-if temp > 30 & temp < 100:
+if (temp > 30 and temp < 100):
     print('true')
 else:
     print('false')

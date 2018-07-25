@@ -3,8 +3,8 @@ import RPi.GPIO as GPIO
 import time
 import math
 
-Trig_Pin = 20  #超声波发送脚
-Echo_Pin = 21  #超声波接收检测脚
+Trig_Pin = 23  #超声波发送脚
+Echo_Pin = 24  #超声波接收检测脚
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -27,6 +27,5 @@ def checkdist():
     return (t2 - t1) * 340 * 100 // 2
 
 
-temp = checkdist()
-print(round(temp))
+print(checkdist())
 GPIO.cleanup()
